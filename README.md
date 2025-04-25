@@ -1,154 +1,176 @@
-<!DOCTYPE html>
+
 <html lang="ur" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>میرے چاند کے نام 🌙</title>
+    <title>میرے چاند آئیشہ کے نام 🌙</title>
     <style>
         body {
-            font-family: 'Segoe UI', 'Arial', sans-serif;
-            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            font-family: 'Nastaliq', 'Segoe UI', sans-serif;
+            background: linear-gradient(to bottom, #fff5f5, #ffecec);
             text-align: center;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-            color: #5e3a3a;
-        }
-        
-        .container {
-            padding: 30px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        h1 {
-            color: #d23669;
-            font-size: 2.8em;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        
-        .message {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            margin: 20px 0;
-            font-size: 1.3em;
+            color: #333;
             line-height: 1.8;
-            border: 1px solid rgba(255, 182, 193, 0.5);
         }
-        
-        .flower {
+
+        .container {
+            padding: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        h1 {
+            color: #c72c41;
+            font-size: 2.5em;
+            margin: 30px 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .message-box {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin: 20px 0;
+            border: 1px solid #ffd6d6;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .message-box::before {
+            content: "";
             position: absolute;
-            font-size: 24px;
-            opacity: 0.8;
-            animation: float 6s infinite ease-in-out;
-            z-index: -1;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4, #ff9a9e);
         }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-25px) rotate(5deg); }
-        }
-        
-        .heart {
-            color: #ff6b81;
-            font-size: 28px;
-            animation: pulse 1.5s infinite;
-            display: inline-block;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.4); }
-            100% { transform: scale(1); }
-        }
-        
+
         .signature {
             font-style: italic;
-            margin-top: 30px;
-            font-size: 1.3em;
+            margin-top: 40px;
             color: #8b3a3a;
+            font-size: 1.2em;
         }
-        
-        .rose {
-            font-size: 40px;
-            margin: 10px;
-            animation: spin 4s linear infinite;
+
+        .petal {
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.7;
+            z-index: -1;
+            animation: falling linear infinite;
         }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+
+        @keyframes falling {
+            0% {
+                transform: translateY(-10vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
+            }
         }
-        
-        .music-control {
-            margin-top: 20px;
-            font-size: 1em;
-            color: #666;
+
+        .moon {
+            font-size: 50px;
+            display: inline-block;
+            margin: 20px 0;
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #e3f2fd, 0 0 20px #bbdefb;
+            }
+            to {
+                text-shadow: 0 0 10px #fff, 0 0 20px #e3f2fd, 0 0 30px #bbdefb, 0 0 40px #90caf9;
+            }
+        }
+
+        .heart-beat {
+            animation: heartbeat 1.5s infinite;
+            display: inline-block;
+            color: #ff6b81;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>میرے چاند <span style="color: #d23669;">آئیشہ</span> کے نام <span class="heart">❤️</span></h1>
+        <h1>میرے چاند <span style="color: #d23669;">آئیشہ</span> کے نام</h1>
         
-        <div class="rose">🌙</div>
+        <div class="moon">🌙</div>
         
-        <div class="message">
-            <p>تم میرے چاند ہو، میرے اندھیروں میں روشنی بن کر آئے ہو۔</p>
-            <p>تمہاری ہر بات میرے دل کو چھو جاتی ہے، جیسے کوئی نغمہ ہو جو دھڑکنوں میں سما جائے۔</p>
-            <p>تمہاری مسکراہٹ کی روشنی میرے اندھیروں کو دور کر دیتی ہے۔</p>
-            <p>تم میرے لیے صرف ایک شخص نہیں ہو، تم میری خوشی ہو، میری امید ہو، میری چاہت ہو۔</p>
-            <p><strong>تم میرے دل کی سب سے خوبصورت حقیقت ہو، میرے چاند۔</strong> <span class="heart">💖</span></p>
+        <div class="message-box">
+            <p style="font-size: 1.3em; margin-bottom: 25px;">میرے چاند، میرے سورج، میری ہر خوشی...</p>
+            
+            <p>جب بھی تم مسکراتی ہو، میرے دل کی دھڑکنیں تمہارے نام لینے لگتی ہیں۔</p>
+            
+            <p>تمہاری آنکھوں میں وہ جادو ہے جو مجھے تمہارے علاوہ کچھ نہیں دیکھنے دیتا۔</p>
+            
+            <p>تم نہ صرف میرے دل میں ہو بلکہ تم میرے ہر خیال، ہر خواب، ہر تمنا ہو۔</p>
+            
+            <p style="margin-top: 30px; font-weight: bold;">تم میرے لیے صرف ایک لفظ نہیں ہو... تم میرے لیے پوری ایک کہانی ہو <span class="heart-beat">❤️</span></p>
         </div>
         
         <div class="signature">
-            <p>ہمیشہ تمہارا،</p>
-            <p style="font-weight: bold; font-size: 1.4em;">ثمر</p>
-        </div>
-        
-        <!-- Music Control (Auto-plays softly) -->
-        <div class="music-control">
-            <p>♫ پس منظر میں نرم موسیقی چل رہی ہے...</p>
-            <audio controls autoplay loop style="width: 80%; max-width: 300px; margin: 10px auto; display: block;">
-                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-            <small>(Volume is set low for a soft effect)</small>
+            <p>ہمیشہ تمہارے،</p>
+            <p style="font-weight: bold; font-size: 1.4em; margin-top: 5px;">ثمر</p>
         </div>
     </div>
 
-    <!-- Animated Flowers -->
+    <!-- Falling Petals Animation -->
     <script>
-        const flowers = ['🌸', '🌺', '🌹', '🌻', '🌼', '💐', '🏵️', '🥀', '🌷'];
-        const colors = ['#ff6b81', '#ffb8b8', '#d23669', '#ff4757', '#ff7f50', '#ff8c69'];
-        
-        function createFlower() {
-            const flower = document.createElement('div');
-            flower.innerHTML = flowers[Math.floor(Math.random() * flowers.length)];
-            flower.className = 'flower';
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.className = 'petal';
             
-            flower.style.left = Math.random() * 100 + 'vw';
-            flower.style.top = Math.random() * 100 + 'vh';
-            flower.style.fontSize = (Math.random() * 25 + 15) + 'px';
-            flower.style.animationDuration = (Math.random() * 6 + 4) + 's';
-            flower.style.color = colors[Math.floor(Math.random() * colors.length)];
+            // Random petal styles
+            const types = ['🌸', '🌹', '🍂', '🌼'];
+            const sizes = ['20px', '25px', '18px', '22px'];
+            const durations = [15, 20, 18, 22];
             
-            document.body.appendChild(flower);
+            petal.innerHTML = types[Math.floor(Math.random() * types.length)];
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.fontSize = sizes[Math.floor(Math.random() * sizes.length)];
+            petal.style.animationDuration = durations[Math.floor(Math.random() * durations.length)] + 's';
+            petal.style.animationDelay = Math.random() * 5 + 's';
             
+            document.body.appendChild(petal);
+            
+            // Remove petal after animation completes
             setTimeout(() => {
-                flower.remove();
-            }, 12000);
+                petal.remove();
+            }, durations[Math.floor(Math.random() * durations.length)] * 1000);
         }
         
-        setInterval(createFlower, 350);
-
-        // Set volume to 20% when page loads
-        window.onload = function() {
-            document.querySelector('audio').volume = 0.2;
-        };
+        // Create petals periodically
+        setInterval(createPetal, 300);
+        
+        // Initial petals
+        for (let i = 0; i < 15; i++) {
+            setTimeout(createPetal, i * 200);
+        }
     </script>
 </body>
 </html>
